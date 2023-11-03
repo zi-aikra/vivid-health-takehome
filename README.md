@@ -25,12 +25,18 @@ Additionally, a `docker-compose.yml` file is provided to ease the process of bui
    cd angular-nestjs-starter
    ```
 
-2. Build and start the applications using Docker Compose:
+2. Install dependencies:
+   ```bash
+   cd app && yarn install
+   cd ui && yarn install
+   ```   
+
+3. Build and start the applications using Docker Compose:
    ```bash
    docker-compose up --build
    ```
 
-3. Access the applications:
+4. Access the applications:
     - Frontend: Open http://localhost:4200 in your web browser.
     - Backend: Send requests to http://localhost:3000.
 
