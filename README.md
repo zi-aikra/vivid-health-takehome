@@ -34,14 +34,22 @@ Additionally, a `docker-compose.yml` file is provided to ease the process of bui
     - Frontend: Open http://localhost:4200 in your web browser.
     - Backend: Send requests to http://localhost:3000.
 
-### Hot Reloading
-Hot reloading is enabled for both the frontend and backend applications, allowing for real-time updates as you modify the code.
-
 ### Database
 A MongoDB instance is included in the `docker-compose.yml` file, and the Nest.js application is configured to interact with MongoDB using Mongoose. The connection URL is configured in the `docker-compose.yml` file, and can be updated to match your preferences.
 
 ### Features
 - A sample `tasks` resource is provided in the `app` project to demonstrate basic CRUD (Create, Read, Update, Delete) operations using Mongoose with MongoDB.  NOTE: You do not have to follow these patterns, they are simply here to demonstrate the MongoDB connectivity.
+- A basic `auth/login` route is provided.  It can be used to generate an auth JWT.
+   ```
+   Route:   /auth/login
+   Method:  POST
+   Body: {
+            "username": string,
+            "password": string
+         }
+   Notes:  Any username/password combination will return a valid JWT that expires in 10m
+   ```
+- Hot Reloading: Hot reloading is enabled for both the frontend and backend applications, allowing for real-time updates as you modify the code.
 
 ## Contributing
 This project is intended to serve as a starting point for take-home interviews, and is not actively maintained. However, feel free to fork this repository and submit pull requests with any enhancements.
