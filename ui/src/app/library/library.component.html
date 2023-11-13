@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<hr>
+
+
+<table id="books">
+    <tr>
+        <th *ngFor="let row of rows">
+            {{ row }}
+        </th>
+    </tr>
+    <tr *ngFor="let book of books">
+        <td *ngFor="let row of data">
+            {{ book[row] }}
+        </td>
+    </tr>
+
+</table>

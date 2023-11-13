@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "4448c2dd-cd9e-4316-8ba6-787d5d3931b9",
+		"name": "Vivid Health Take-Home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28137795"
+	},
+	"item": [
+		{
+			"name": "Authorized",
+			"item": [
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": 9781640322790,\r\n    \"title\": \"The Great Gatsby\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"genre\": \"Novel\",\r\n    \"edition\": \"1st\",\r\n    \"coverImageUrl\": \"https://www.bookcoverart.com/TheGreatGatsby_1925jacket.jpeg\",\r\n    \"bindingType\": \"Paperback\",\r\n    \"publisher\": \"Charles Scribner's Sons\",\r\n    \"datePublished\": \"April 10, 1925\",\r\n    \"pages\": 218,\r\n    \"listPrice\": 2.00,\r\n    \"listPriceCurrency\": \"USD\",\r\n    \"dateAdded\": \"Nov. 8, 2023\",\r\n    \"updated\": \"Nov. 8, 2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/books/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": 9781640322790,\r\n    \"title\": \"The Great Gatsby\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"genre\": \"Novel\",\r\n    \"edition\": \"1st\",\r\n    \"coverImageUrl\": \"https://www.bookcoverart.com/TheGreatGatsby_1925jacket.jpeg\",\r\n    \"bindingType\": \"Paperback\",\r\n    \"publisher\": \"Charles Scribner's Sons\",\r\n    \"datePublished\": \"April 10, 1925\",\r\n    \"pages\": 218,\r\n    \"listPrice\": 3.50,\r\n    \"listPriceCurrency\": \"CAD\",\r\n    \"dateAdded\": \"Nov. 8, 2023\",\r\n    \"updated\": \"Nov. 8, 2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/books/edit/6551f94e4cdcda8c11021863",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"edit",
+								"6551f94e4cdcda8c11021863"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": 9781640322790,\r\n    \"title\": \"The Great Gatsby\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"genre\": \"Novel\",\r\n    \"edition\": \"1st\",\r\n    \"coverImageUrl\": \"https://www.bookcoverart.com/TheGreatGatsby_1925jacket.jpeg\",\r\n    \"bindingType\": \"Paperback\",\r\n    \"publisher\": \"Charles Scribner's Sons\",\r\n    \"datePublished\": \"April 10, 1925\",\r\n    \"pages\": 218,\r\n    \"listPrice\": 3.50,\r\n    \"listPriceCurrency\": \"CAD\",\r\n    \"dateAdded\": \"Nov. 8, 2023\",\r\n    \"updated\": \"Nov. 8, 2023\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/books/delete/6551f94e4cdcda8c11021863",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"delete",
+								"6551f94e4cdcda8c11021863"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unauthorized",
+			"item": [
+				{
+					"name": "Get All Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/books/6551f1b4e4c09405e652bdf4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"books",
+								"6551f1b4e4c09405e652bdf4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(pm.response.code === 200) {\r",
+							"    pm.environment.set('auth', pm.response.json().token)\r",
+							"}\r",
+							"pm.test(\"Response status code is 201\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(201);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has the required field - access_token\", function () {\r",
+							"  const responseData = pm.response.json();\r",
+							"  \r",
+							"  pm.expect(responseData).to.be.an('object');\r",
+							"  pm.expect(responseData.access_token).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Access token is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData.access_token).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Access token should not be empty\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Access token is saved in the environment variable\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData.access_token).to.exist;\r",
+							"    pm.environment.set(\"authToken\", responseData.access_token);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is in an acceptable range\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
